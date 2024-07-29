@@ -6,7 +6,7 @@ const wordsOf = {
 }
 //Creating a function to give random number b/w 0 to till, where till will be the last number.
 function randomNumber(till){
-    Math.floor(Math.random()*till);
+   return Math.floor(Math.random()*till);
 }
 //array of strings that we want to print
 const message = [];
@@ -20,17 +20,17 @@ const mixedMessage = () =>{
     const seletedWord = arrOfWordsOf[randomNumber(arrOfWordsOf.length)];
 
     switch(seletedWord){
-        case fortune:
+        case 'fortune':
             message.push(`You are having ${wordsOf.fortune[randomNumber(wordsOf.fortune.length)]}`);
             break;
-        case advice:
+        case 'advice':
             message.push(`You are adviced to ${wordsOf.advice[randomNumber(wordsOf.advice.length)]}`);
             break;
-        case sign:
+        case 'sign':
             message.push(`You have the sign of ${wordsOf.sign[randomNumber(wordsOf.sign.length)]}`);
             break;
     }
 
-    return message;
+    return message.join();
 }
 console.log(mixedMessage());
